@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unnamed Ai Project</title>
+<title>Gemini</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -163,6 +163,8 @@
     align-items: flex-start;
     gap: 10px;
     max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .msg.user .msg-row { flex-direction: row-reverse; }
@@ -195,6 +197,9 @@
     line-height: 1.75;
     color: #1f1f1f;
     max-width: calc(100% - 42px);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
   }
 
   .msg.user .bubble {
@@ -550,7 +555,7 @@
         </svg>
       </div>
       <h1>안녕하세요<br><em>무엇을 도와드릴까요?</em></h1>
-      <p>API 키를 설정하고 Unnamed Ai Project와 대화해보세요.</p>
+      <p>Google AI API 키를 설정하고 Gemini와 대화해보세요.</p>
       <div class="chips">
         <div class="chip" onclick="suggest('코드 디버깅 도와줘')">코드 디버깅</div>
         <div class="chip" onclick="suggest('이 내용을 요약해줘')">글 요약</div>
@@ -566,7 +571,7 @@
       <b>API 키</b>를 설정하면 바로 시작할 수 있어요 →
     </div>
     <div class="input-box">
-      <textarea class="chat-input" id="inp" placeholder="Unnamed Ai Project에게 메시지 보내기" rows="1"
+      <textarea class="chat-input" id="inp" placeholder="Gemini에게 메시지 보내기" rows="1"
         onkeydown="onKey(event)" oninput="resize(this)"></textarea>
       <button class="send-btn" id="sendBtn" onclick="send()" disabled>
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
@@ -574,15 +579,15 @@
         </svg>
       </button>
     </div>
-    <div class="footer-note">Unnamed Ai Project는 실수를 할 수 있어요. 중요한 정보는 직접 확인하세요.</div>
+    <div class="footer-note">Gemini는 실수를 할 수 있어요. 중요한 정보는 직접 확인하세요.</div>
   </div>
 </div>
 
 <div class="overlay" id="overlay" onclick="bgClick(event)">
   <div class="modal">
     <h2>API 키 설정</h2>
-    <p>SeungMin AI Studio에서 발급한 API 키를 입력하세요.<br>
-      <a href="https://aistudio.google.com/apikey" target="_blank">https://github.com/SeungMin-Seo0321/project-Apiser/edit/main/index.html</a>에서 무료로 받을 수 있어요.</p>
+    <p>Google AI Studio에서 발급한 API 키를 입력하세요.<br>
+      <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com</a>에서 무료로 받을 수 있어요.</p>
     <input class="modal-input" type="password" id="keyInput" autocomplete="off" placeholder="seungmin API를 입력하세요"
       onkeydown="if(event.key==='Enter') save()">
     <div class="recent-list">
